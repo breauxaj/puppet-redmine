@@ -14,4 +14,12 @@ class redmine (
     require => [ Package['git','ruby'], File[$target] ],
   }
 
+  file { '/etc/profile.d/redmine.sh':
+    ensure  => present,
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0644',
+    content => template('redmine/profile.erb'),
+  }
+
 }
