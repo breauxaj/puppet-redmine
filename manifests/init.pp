@@ -14,12 +14,4 @@ class redmine (
     require => [ Package['git','ruby'], File[$target] ],
   }
 
-  exec { 'redmine-dependencies':
-    path    => '/bin:/usr/bin',
-    command => 'bundle install',
-    cwd     => "${target}/redmine",
-    timeout => 10000,
-    require => Exec['pull-redmine'],
-  }
-
 }
