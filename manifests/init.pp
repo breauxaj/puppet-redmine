@@ -1,5 +1,7 @@
 class redmine (
   $target = '/var/vhost',
+  $user = 'deploy',
+  $group = 'deploy'
 ) {
   file { $target:
     ensure => directory,
