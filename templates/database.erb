@@ -1,0 +1,12 @@
+# MANAGED BY PUPPET!
+<% if adapter and ! adapter.empty? -%>
+<% if adapter adapter.casecmp("mysql") == 0 -%>
+production:
+  adapter: mysql
+  database: <%= database %>
+  host: <%= host %>
+  username: <%= username %>
+  password: "<%= password %>"
+  encoding: utf8
+<% end -%>
+<% end -%>
