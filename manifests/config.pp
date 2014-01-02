@@ -3,6 +3,7 @@ define redmine::config (
   $adapter = 'mysql',
   $database = 'redmine',
   $host = '127.0.0.1',
+  $port = '3306',
   $username = 'redmine',
   $password = 'r3dm1n#'
 ) {
