@@ -1,5 +1,6 @@
 class redmine (
-  $target = '/var/vhost'
+  $target = '/var/vhost',
+  $version = 'master'
 ) {
   file { $target:
     ensure => directory,
@@ -7,7 +8,7 @@ class redmine (
 
   exec { 'pull-redmine':
     path    => '/bin:/usr/bin',
-    command => "git clone https://github.com/redmine/redmine.git",
+    command => "git clone https://github.com/redmine/redmine.git -b ${version}",
     cwd     => $target,
     creates => "${target}/redmine/.git',
     timeout => 10000,
