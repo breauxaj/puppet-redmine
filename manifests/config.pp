@@ -7,7 +7,7 @@ define redmine::config (
   $username = 'redmine',
   $password = 'r3dm1n#'
 ) {
-  file { "$target/redmine/config/database.yml":
+  file { "${target}/redmine/config/database.yml":
     ensure  => present,
     owner   => 'root',
     group   => 'root',
